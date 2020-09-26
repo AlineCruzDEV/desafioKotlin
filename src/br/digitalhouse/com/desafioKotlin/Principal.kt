@@ -17,4 +17,10 @@ fun main() {
     verificaIgualdade = curso1.equals(curso2)
     println(verificaIgualdade)
 
+    //testando parteC
+    val professor1 = Professor("Aline",  "Cruz",2,1)
+    val professor2 = Professor("Alessandra",  "Luisi",20, 1)
+
+    verificaIgualdade = professor1.equals(professor2)
+    println(verificaIgualdade)
 }

@@ -20,11 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfcaeae2-fd3e-4207-8f82-31abd7f09fb4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Curso.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Professor.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/desafioKotlin/br/digitalhouse/com/desafioKotlin/PrincipalKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/desafioKotlin/br/digitalhouse/com/desafioKotlin/PrincipalKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Curso.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Curso.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Principal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Principal.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/desafioKotlin.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/desafioKotlin.drawio" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
