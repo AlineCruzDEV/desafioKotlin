@@ -20,12 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfcaeae2-fd3e-4207-8f82-31abd7f09fb4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Principal.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desafioKotlin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/desafioKotlin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Curso.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/desafioKotlin/br/digitalhouse/com/desafioKotlin/PrincipalKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/desafioKotlin/br/digitalhouse/com/desafioKotlin/PrincipalKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Principal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Principal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/desafioKotlin.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/desafioKotlin.drawio" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,21 +93,21 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1318" height="166" key="GridCell.Tab.0.bottom" timestamp="1601078605883">
+    <state width="1318" height="166" key="GridCell.Tab.0.bottom" timestamp="1601080307551">
       <screen x="1600" y="132" width="1366" height="768" />
     </state>
-    <state width="1318" height="166" key="GridCell.Tab.0.bottom/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601078605883" />
-    <state width="1318" height="166" key="GridCell.Tab.0.center" timestamp="1601078605882">
+    <state width="1318" height="166" key="GridCell.Tab.0.bottom/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601080307551" />
+    <state width="1318" height="166" key="GridCell.Tab.0.center" timestamp="1601080307551">
       <screen x="1600" y="132" width="1366" height="768" />
     </state>
-    <state width="1318" height="166" key="GridCell.Tab.0.center/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601078605882" />
-    <state width="1318" height="166" key="GridCell.Tab.0.left" timestamp="1601078605882">
+    <state width="1318" height="166" key="GridCell.Tab.0.center/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601080307551" />
+    <state width="1318" height="166" key="GridCell.Tab.0.left" timestamp="1601080307551">
       <screen x="1600" y="132" width="1366" height="768" />
     </state>
-    <state width="1318" height="166" key="GridCell.Tab.0.left/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601078605882" />
-    <state width="1318" height="166" key="GridCell.Tab.0.right" timestamp="1601078605883">
+    <state width="1318" height="166" key="GridCell.Tab.0.left/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601080307551" />
+    <state width="1318" height="166" key="GridCell.Tab.0.right" timestamp="1601080307551">
       <screen x="1600" y="132" width="1366" height="768" />
     </state>
-    <state width="1318" height="166" key="GridCell.Tab.0.right/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601078605883" />
+    <state width="1318" height="166" key="GridCell.Tab.0.right/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601080307551" />
   </component>
 </project>
