@@ -1,17 +1,19 @@
 package br.digitalhouse.com.desafioKotlin
 
-class Professor(var nome: String, var sobrenome: String, var tempoDeCasa: Int, val codigoProfessor: Int) {
-
+abstract class Professor(
+        var nome: String,
+        var sobrenome: String,
+        var tempoDeCasa: Int,
+        var codigoProfessor: Int
+) {
     init {
-        println("Professor $nome $sobrenome - Codigo $codigoProfessor cadastrado com sucesso")
+        println("Professor titular $nome $sobrenome - Codigo $codigoProfessor cadastrado com sucesso.")
     }
 
     //verifica se dois professores são iguais tendo base apenas seus códigos
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        other as Professor
+        if (other !is Professor) return false
 
         if (codigoProfessor != other.codigoProfessor) return false
 

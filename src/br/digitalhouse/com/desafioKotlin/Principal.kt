@@ -11,15 +11,15 @@ fun main() {
     println(verificaIgualdade)
 
     //testando parteB
-    val curso1 = Curso("Java",  1)
-    val curso2 = Curso("Kotlin",  1)
+    val curso1 = Curso("Java", 1)
+    val curso2 = Curso("Kotlin", 1)
 
     verificaIgualdade = curso1.equals(curso2)
     println(verificaIgualdade)
 
-    //testando parteC
-    val professor1 = Professor("Aline",  "Cruz",2,1)
-    val professor2 = Professor("Alessandra",  "Luisi",20, 1)
+    //testando parteD
+    val professor1 = ProfessorTitular("Aline", "Cruz", 2, 1, "Android")
+    val professor2 = ProfessorAdjunto("Alessandra", "Luisi", 20, 1, 4)
 
     verificaIgualdade = professor1.equals(professor2)
     println(verificaIgualdade)
