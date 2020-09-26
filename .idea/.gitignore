@@ -1,3 +1,5 @@
-# Default ignored files
-/shelf/
-/workspace.xml
+# Project exclude paths
+/out/
+/.idea/
+/lib/
+/desafioKotlin.iml
