@@ -1,6 +1,10 @@
 package br.digitalhouse.com.desafioKotlin
 
-class Aluno(var nome: String, var sobrenome: String, val codigoAluno: Int) {
+class Aluno(
+        var nome: String,
+        var sobrenome: String,
+        val codigoAluno: Int
+) {
 
     init {
         println("Aluno(a) $nome $sobrenome - Codigo $codigoAluno criado(a) no sistema.")

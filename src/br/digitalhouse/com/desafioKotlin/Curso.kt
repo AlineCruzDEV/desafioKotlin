@@ -1,6 +1,9 @@
 package br.digitalhouse.com.desafioKotlin
 
-class Curso(var nome: String, val codigoCurso: Int) {
+class Curso(
+        var nome: String,
+        val codigoCurso: Int
+) {
 
     init {
         println("Curso $nome - Codigo $codigoCurso criado com sucesso")
