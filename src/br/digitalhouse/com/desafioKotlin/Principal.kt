@@ -32,4 +32,8 @@ fun main() {
     var data = Date()
     val matricula1 = Matricula(aluno1, curso1, data)
     val matricula2 = Matricula(aluno2, curso2, data)
+    println()
+
+    //testando parteG
+    val digitalManager = DigitalHouseManager(mutableListOf(aluno1, aluno2), mutableListOf(professor1, professor2), mutableListOf(curso1, curso2), mutableListOf(matricula1, matricula2))
 }
