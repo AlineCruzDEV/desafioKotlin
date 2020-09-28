@@ -6,7 +6,7 @@ fun main() {
 
     //testando parteA
     val aluno1 = Aluno("Aline", "Cruz", 1)
-    val aluno2 = Aluno("Alessandra", "Luisi", 1)
+    val aluno2 = Aluno("Alessandra", "Luisi", 2)
     var verificaIgualdade: Boolean
 
     verificaIgualdade = aluno1.equals(aluno2)
@@ -21,7 +21,7 @@ fun main() {
     println(verificaIgualdade)
 
     //testando parteE
-    val curso1 = Curso("Java", 1, professor1, professor2,4, mutableListOf(aluno1,aluno2))
+    val curso1 = Curso("Java", 1, professor1, professor2,3, mutableListOf(aluno1,aluno2))
     val curso2 = Curso("Kotlin", 1, professor1, professor2,4, mutableListOf(aluno2,aluno1))
 
     verificaIgualdade = curso1.equals(curso2)
@@ -36,4 +36,16 @@ fun main() {
 
     //testando parteG
     val digitalManager = DigitalHouseManager(mutableListOf(aluno1, aluno2), mutableListOf(professor1, professor2), mutableListOf(curso1, curso2), mutableListOf(matricula1, matricula2))
+
+    //testando parteH
+    val aluno3 = Aluno("Aurea", "Tolentino", 3)
+    val aluno4 = Aluno("Angelo", "Luisi", 4)
+    val aluno5 = Aluno("Antonio", "Abidal", 5)
+
+    curso1.adicionarUmAluno(aluno3)
+    curso1.adicionarUmAluno(aluno4)
+    curso1.excluirAluno(aluno1)
+    curso1.adicionarUmAluno(aluno4)
+    curso1.excluirAluno(aluno5)
+    curso1.excluirAluno(aluno1)
 }
