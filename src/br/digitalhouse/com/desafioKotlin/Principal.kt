@@ -9,13 +9,7 @@ fun main() {
 
     verificaIgualdade = aluno1.equals(aluno2)
     println(verificaIgualdade)
-
-    //testando parteB
-    val curso1 = Curso("Java", 1)
-    val curso2 = Curso("Kotlin", 1)
-
-    verificaIgualdade = curso1.equals(curso2)
-    println(verificaIgualdade)
+    println()
 
     //testando parteD
     val professor1 = ProfessorTitular("Aline", "Cruz", 2, 1, "Android")
@@ -23,4 +17,11 @@ fun main() {
 
     verificaIgualdade = professor1.equals(professor2)
     println(verificaIgualdade)
+
+    //testando parteE
+    val curso1 = Curso("Java", 1, professor1, professor2,4, mutableListOf(aluno1,aluno2))
+    val curso2 = Curso("Kotlin", 1, professor1, professor2,4, mutableListOf(aluno2,aluno1))
+
+    verificaIgualdade = curso1.equals(curso2)
+    println("\n"+verificaIgualdade)
 }

@@ -2,11 +2,17 @@ package br.digitalhouse.com.desafioKotlin
 
 class Curso(
         var nome: String,
-        val codigoCurso: Int
+        val codigoCurso: Int,
+        var professorTitular: ProfessorTitular,
+        var professorAdjunto: ProfessorAdjunto,
+        var qtdadeMaximaAlunos: Int,
+        var listaAlunos: MutableList<Aluno>
 ) {
 
     init {
-        println("Curso $nome - Codigo $codigoCurso criado com sucesso")
+        println("\nCurso $nome - Codigo $codigoCurso criado com sucesso. \nMembros: Professor Titular ${professorTitular.nome}, Professor Adjunto ${professorAdjunto.nome}, Máximo de $qtdadeMaximaAlunos alunos")
+        println("Lista de Alunos Matriculados: ")
+        listaAlunos.forEach { print("\t" + it.nome + ",")}
     }
 
     //verifica se dois cursos são iguais tendo base apenas seus códigos
