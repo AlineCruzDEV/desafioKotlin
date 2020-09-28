@@ -1,5 +1,7 @@
 package br.digitalhouse.com.desafioKotlin
 
+import java.util.*
+
 fun main() {
 
     //testando parteA
@@ -24,4 +26,10 @@ fun main() {
 
     verificaIgualdade = curso1.equals(curso2)
     println("\n"+verificaIgualdade)
+    println()
+
+    //testando parteF
+    var data = Date()
+    val matricula1 = Matricula(aluno1, curso1, data)
+    val matricula2 = Matricula(aluno2, curso2, data)
 }
