@@ -1,24 +1,79 @@
 package br.digitalhouse.com.desafioKotlin
 
-class DigitalHouseManager(
-        var listaDeAlunos: MutableList<Aluno>,
-        var listaDeProfessores: MutableList<Professor>,
-        var listaDeCursos: MutableList<Curso>,
-        var listaDeMatriculas: MutableList<Matricula>
-) {
-    init {
-        println("Digital Manager inicializada.")
-        println("Alunos:")
-        listaDeAlunos.forEach { println(it.nome) }
-        println()
-        println("Professores:")
-        listaDeProfessores.forEach { println(it.nome) }
-        println()
-        println("Cursos:")
-        listaDeCursos.forEach { println(it.nome) }
-        println()
-        println("Data Matriculas:")
-        listaDeMatriculas.forEach { println(it.data) }
-        println()
+import java.util.*
+
+class DigitalHouseManager {
+    var listaDeAlunos = mutableMapOf<Int,Aluno>()
+    var listaDeProfessores = mutableMapOf<Int,Professor>()
+    var listaDeCursos = mutableMapOf<Int,Curso>()
+    var listaDeMatriculas = mutableListOf<Matricula>()
+
+    //registra um curso e coloca na listaDeCursos
+//    fun registrarCurso(nome: String, codigoCurso: Int, quantidadeMaximaDeAlunos: Int) {
+//        listaDeCursos.put(codigoCurso, Curso(nome, codigoCurso, quantidadeMaximaDeAlunos))
+//    }
+
+    //exclui um curso pelo seu código
+    fun excluirCurso(codigoCurso: Int){
+        when {
+            listaDeCursos.containsKey(codigoCurso) -> {
+                listaDeCursos.remove(codigoCurso)
+                println("Curso excluído com sucesso")
+            }
+            else -> println("Curso não existe.")
+        }
     }
+
+    //registrar professor adjunto
+    fun registrarProfessorAdjunto(nome: String, sobrenome: String, codigoProfessor: Int, quantidadeDeHoras: Int) = listaDeProfessores.put(codigoProfessor, ProfessorAdjunto(nome,sobrenome, 0, codigoProfessor,quantidadeDeHoras))
+
+    //registrar professor titular
+    fun registrarProfessorTitular(nome: String, sobrenome: String, codigoProfessor: Int, especialidade: String) = listaDeProfessores.put(codigoProfessor, ProfessorTitular(nome, sobrenome,0, codigoProfessor, especialidade))
+
+    //excluir professor
+    fun excluirProfessor(codigoProfessor: Int){
+        when {
+            listaDeProfessores.containsKey(codigoProfessor) -> {
+                listaDeProfessores.remove(codigoProfessor)
+                println("Professor excluido com sucesso")
+            }
+            else -> println("Professor não existe")
+        }
+    }
+
+    //registrar um aluno
+    fun matricularAluno(nome: String, sobrenome: String, codigoAluno: Int) = listaDeAlunos.put(codigoAluno, Aluno(nome, sobrenome, codigoAluno))
+
+    //matricular um aluno em um curso
+    fun matricularAluno(codigoAluno: Int, codigoCurso: Int){
+        var alunoAux: Aluno
+        var cursoAux: Curso
+
+        when {
+            listaDeCursos.containsKey(codigoCurso) ->  {
+                when {
+                    listaDeAlunos.containsKey(codigoAluno) -> {
+                        alunoAux = listaDeAlunos.getValue(codigoAluno)
+                        var validaMatricula = listaDeCursos[codigoCurso]?.adicionarUmAluno(alunoAux)
+                        when {
+                            validaMatricula == true -> {
+                                var data = Date()
+                                var cursoAux = listaDeCursos.getValue(codigoCurso)
+                                listaDeMatriculas.add(Matricula(alunoAux, cursoAux, data))
+                            }
+                            else -> println("Digital Manager - Não há vagas disponíveis")
+
+                            //posso adicionar a matrícula dentro de adicionarUmAluno na classe curso?
+                            //tem alguma forma melhor de fazer?
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    fun alocarProfessores(codigoCurso: Int, codigoProfessorTitular: Int, codigoProfessorAdjunto: Int){
+        //dúvida de como fazer por conta do construtor do método registrarCurso
+    }
+
 }

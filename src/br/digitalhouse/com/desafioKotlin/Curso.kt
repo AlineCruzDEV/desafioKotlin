@@ -31,14 +31,14 @@ class Curso(
     fun adicionarUmAluno(umAluno: Aluno): Boolean {
         return when {
             listaAlunos.size < qtdadeMaximaAlunos -> {
-                println("Tamanho da Lista ${listaAlunos.size} - Quantidade maxima $qtdadeMaximaAlunos")
+                println("Classe Curso - Tamanho da Lista ${listaAlunos.size} - Quantidade maxima $qtdadeMaximaAlunos")
                 listaAlunos.add(umAluno)
                 println("Aluno ${umAluno.nome} adicionado ao curso $nome. Lista atual:")
                 listaAlunos.forEach { println(it.nome) }
                 true
             }
             else -> {
-                println("Tamanho da Lista ${listaAlunos.size} - Quantidade maxima $qtdadeMaximaAlunos")
+                println("Classe Curso - Tamanho da Lista ${listaAlunos.size} - Quantidade maxima $qtdadeMaximaAlunos")
                 println("Nao há vagas disponíveis no curso $nome. Não foi possível adicionar aluno ${umAluno.nome}")
                 false
             }

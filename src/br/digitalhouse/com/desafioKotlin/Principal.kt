@@ -35,7 +35,7 @@ fun main() {
     println()
 
     //testando parteG
-    val digitalManager = DigitalHouseManager(mutableListOf(aluno1, aluno2), mutableListOf(professor1, professor2), mutableListOf(curso1, curso2), mutableListOf(matricula1, matricula2))
+    val digitalManager = DigitalHouseManager()
 
     //testando parteH
     val aluno3 = Aluno("Aurea", "Tolentino", 3)
@@ -45,7 +45,15 @@ fun main() {
     curso1.adicionarUmAluno(aluno3)
     curso1.adicionarUmAluno(aluno4)
     curso1.excluirAluno(aluno1)
-    curso1.adicionarUmAluno(aluno4)
+    //curso1.adicionarUmAluno(aluno4)
     curso1.excluirAluno(aluno5)
     curso1.excluirAluno(aluno1)
+
+    println("\n---Agora com digitalmanager---")
+    digitalManager.listaDeAlunos.put(1, aluno1)
+    digitalManager.listaDeAlunos.put(2, aluno2)
+
+    digitalManager.listaDeCursos.put(1,curso1)
+    digitalManager.matricularAluno(1,1)
+
 }
