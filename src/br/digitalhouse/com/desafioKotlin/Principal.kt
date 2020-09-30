@@ -21,8 +21,8 @@ fun main() {
     println(verificaIgualdade)
 
     //testando parteE
-    val curso1 = Curso("Java", 1, professor1, professor2,3, mutableListOf(aluno1,aluno2))
-    val curso2 = Curso("Kotlin", 1, professor1, professor2,4, mutableListOf(aluno2,aluno1))
+    val curso1 = Curso("Java", 1, 5)
+    val curso2 = Curso("Kotlin", 1, 4)
 
     verificaIgualdade = curso1.equals(curso2)
     println("\n"+verificaIgualdade)

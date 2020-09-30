@@ -2,15 +2,16 @@ package br.digitalhouse.com.desafioKotlin
 
 class Curso(
         var nome: String,
-        val codigoCurso: Int,
-        var professorTitular: ProfessorTitular,
-        var professorAdjunto: ProfessorAdjunto,
-        var qtdadeMaximaAlunos: Int,
-        var listaAlunos: MutableList<Aluno>
+        var codigoCurso: Int,
+        var qtdadeMaximaAlunos: Int
 ) {
 
+    var professorTitular: ProfessorTitular? = null
+    var professorAdjunto: ProfessorAdjunto? = null
+    var listaAlunos = mutableListOf<Aluno>()
+
     init {
-        println("\nCurso $nome - Codigo $codigoCurso criado com sucesso. \nMembros: Professor Titular ${professorTitular.nome}, Professor Adjunto ${professorAdjunto.nome}, Máximo de $qtdadeMaximaAlunos alunos")
+        println("\nCurso $nome - Codigo $codigoCurso criado com sucesso. \nMembros: Professor Titular ${professorTitular?.nome}, Professor Adjunto ${professorAdjunto?.nome}, Máximo de $qtdadeMaximaAlunos alunos")
         println("Lista de Alunos Matriculados: ")
         listaAlunos.forEach { print("\t" + it.nome + ",") }
     }
@@ -31,10 +32,7 @@ class Curso(
     fun adicionarUmAluno(umAluno: Aluno): Boolean {
         return when {
             listaAlunos.size < qtdadeMaximaAlunos -> {
-                println("Classe Curso - Tamanho da Lista ${listaAlunos.size} - Quantidade maxima $qtdadeMaximaAlunos")
                 listaAlunos.add(umAluno)
-                println("Aluno ${umAluno.nome} adicionado ao curso $nome. Lista atual:")
-                listaAlunos.forEach { println(it.nome) }
                 true
             }
             else -> {
