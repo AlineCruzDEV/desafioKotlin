@@ -64,8 +64,9 @@ class DigitalHouseManager {
         }
     }
 
+    //alocar professores titular e adjunto em um determinado curso
     fun alocarProfessores(codigoCurso: Int, codigoProfessorTitular: Int, codigoProfessorAdjunto: Int) {
-        
+
     }
 
 }
