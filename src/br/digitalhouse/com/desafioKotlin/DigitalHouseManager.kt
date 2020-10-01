@@ -5,20 +5,21 @@ import java.util.*
 class DigitalHouseManager {
     var listaDeAlunos = mutableMapOf<Int, Aluno>()
     var listaDeProfessores = mutableMapOf<Int, Professor>()
-    var listaDeCursos = mutableMapOf<Int, Curso>()
+    var listaDeCursos = mutableListOf<Curso>()
     var listaDeMatriculas = mutableListOf<Matricula>()
 
     //registra um curso e coloca na listaDeCursos
-    fun registrarCurso(nome: String, codigoCurso: Int, quantidadeMaximaDeAlunos: Int) = listaDeCursos.put(codigoCurso, Curso(nome, codigoCurso, quantidadeMaximaDeAlunos))
+    fun registrarCurso(nome: String, codigoCurso: Int, quantidadeMaximaDeAlunos: Int) = listaDeCursos.add(Curso(nome, codigoCurso, quantidadeMaximaDeAlunos))
 
     //exclui um curso pelo seu código
     fun excluirCurso(codigoCurso: Int) {
-        when {
-            listaDeCursos.containsKey(codigoCurso) -> {
-                listaDeCursos.remove(codigoCurso)
-                println("Curso excluído com sucesso")
+        listaDeCursos.forEach {
+            when {
+                it.codigoCurso == codigoCurso -> {
+                    listaDeCursos.remove(it)
+                    println("[Digital Manager] Curso excluído com sucesso")
+                }
             }
-            else -> println("Curso não existe.")
         }
     }
 
@@ -33,9 +34,9 @@ class DigitalHouseManager {
         when {
             listaDeProfessores.containsKey(codigoProfessor) -> {
                 listaDeProfessores.remove(codigoProfessor)
-                println("Professor excluido com sucesso")
+                println("[Digital Manager] Professor excluido com sucesso")
             }
-            else -> println("Professor não existe")
+            else -> println("[Digital Manager] Professor não existe")
         }
     }
 
@@ -47,26 +48,39 @@ class DigitalHouseManager {
         var alunoAux: Aluno
         var cursoAux: Curso
 
-        when {
-            listaDeCursos.containsKey(codigoCurso) && listaDeAlunos.containsKey(codigoAluno) -> {
-                alunoAux = listaDeAlunos.getValue(codigoAluno)
-                var validaMatricula = listaDeCursos[codigoCurso]?.adicionarUmAluno(alunoAux)
-                when {
-                    validaMatricula == true -> {
-                        var data = Date()
-                        var cursoAux = listaDeCursos.getValue(codigoCurso)
-                        listaDeMatriculas.add(Matricula(alunoAux, cursoAux, data))
+        listaDeCursos.forEach {
+            when {
+                (it.codigoCurso == codigoCurso && listaDeAlunos.containsKey(codigoAluno)) -> {
+                    alunoAux = listaDeAlunos.getValue(codigoAluno)
+
+                    var validaMatricula = it.adicionarUmAluno(alunoAux)
+
+                    when {
+                        validaMatricula == true -> {
+                            var data = Date()
+                            listaDeMatriculas.add(Matricula(alunoAux, it, data))
+                        }
+                        else -> println("[Digital Manager] Não há vagas disponíveis")
                     }
-                    else -> println("[Digital Manager] - Não há vagas disponíveis")
                 }
             }
-            else -> println("[Digital Manager] - Curso ou Aluno não encontrado, revise os dados.")
         }
     }
 
     //alocar professores titular e adjunto em um determinado curso
     fun alocarProfessores(codigoCurso: Int, codigoProfessorTitular: Int, codigoProfessorAdjunto: Int) {
+        listaDeCursos.forEach {
+            when {
+                it.codigoCurso == codigoCurso -> {
+                    var titular= listaDeProfessores.getValue(codigoProfessorTitular)
+                    var adjunto = listaDeProfessores.getValue(codigoProfessorAdjunto)
 
+                    it.professorTitular = titular as ProfessorTitular
+                    it.professorAdjunto = adjunto as ProfessorAdjunto
+
+                    println("[Digital Manager] Alocados professores ${it.professorTitular!!.nome} (Titular) e ${it.professorAdjunto!!.nome} (Adjunto) ao curso ${it.nome}")
+                }
+            }
+        }
     }
-
 }

@@ -15,14 +15,14 @@ fun main() {
 
     //testando parteD
     val professor1 = ProfessorTitular("Aline", "Cruz", 2, 1, "Android")
-    val professor2 = ProfessorAdjunto("Alessandra", "Luisi", 20, 1, 4)
+    val professor2 = ProfessorAdjunto("Alessandra", "Luisi", 20, 2, 4)
 
     verificaIgualdade = professor1.equals(professor2)
     println(verificaIgualdade)
 
     //testando parteE
-    val curso1 = Curso("Java", 1, 5)
-    val curso2 = Curso("Kotlin", 1, 4)
+    val curso1 = Curso("Java", 1, 3)
+    val curso2 = Curso("Kotlin", 2, 4)
 
     verificaIgualdade = curso1.equals(curso2)
     println("\n"+verificaIgualdade)
@@ -45,15 +45,21 @@ fun main() {
     curso1.adicionarUmAluno(aluno3)
     curso1.adicionarUmAluno(aluno4)
     curso1.excluirAluno(aluno1)
-    //curso1.adicionarUmAluno(aluno4)
+    curso1.adicionarUmAluno(aluno4)
     curso1.excluirAluno(aluno5)
     curso1.excluirAluno(aluno1)
 
-    println("\n---Agora com digitalmanager---")
+    println("\n---Agora com digitalManager---")
+    println()
+
     digitalManager.listaDeAlunos.put(1, aluno1)
     digitalManager.listaDeAlunos.put(2, aluno2)
 
-    digitalManager.listaDeCursos.put(1,curso1)
+    digitalManager.listaDeCursos.add(curso1)
     digitalManager.matricularAluno(1,1)
 
+    digitalManager.listaDeProfessores.put(professor1.codigoProfessor, professor1)
+    digitalManager.listaDeProfessores.put(professor2.codigoProfessor, professor2)
+
+    digitalManager.alocarProfessores(1,1,2)
 }

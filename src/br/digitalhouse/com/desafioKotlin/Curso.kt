@@ -35,11 +35,7 @@ class Curso(
                 listaAlunos.add(umAluno)
                 true
             }
-            else -> {
-                println("Classe Curso - Tamanho da Lista ${listaAlunos.size} - Quantidade maxima $qtdadeMaximaAlunos")
-                println("Nao há vagas disponíveis no curso $nome. Não foi possível adicionar aluno ${umAluno.nome}")
-                false
-            }
+            else -> false
         }
     }
 
