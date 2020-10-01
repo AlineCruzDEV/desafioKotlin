@@ -4,62 +4,37 @@ import java.util.*
 
 fun main() {
 
-    //testando parteA
-    val aluno1 = Aluno("Aline", "Cruz", 1)
-    val aluno2 = Aluno("Alessandra", "Luisi", 2)
-    var verificaIgualdade: Boolean
-
-    verificaIgualdade = aluno1.equals(aluno2)
-    println(verificaIgualdade)
-    println()
-
-    //testando parteD
-    val professor1 = ProfessorTitular("Aline", "Cruz", 2, 1, "Android")
-    val professor2 = ProfessorAdjunto("Alessandra", "Luisi", 20, 2, 4)
-
-    verificaIgualdade = professor1.equals(professor2)
-    println(verificaIgualdade)
-
-    //testando parteE
-    val curso1 = Curso("Java", 1, 3)
-    val curso2 = Curso("Kotlin", 2, 4)
-
-    verificaIgualdade = curso1.equals(curso2)
-    println("\n"+verificaIgualdade)
-    println()
-
-    //testando parteF
-    var data = Date()
-    val matricula1 = Matricula(aluno1, curso1, data)
-    val matricula2 = Matricula(aluno2, curso2, data)
-    println()
-
-    //testando parteG
     val digitalManager = DigitalHouseManager()
 
-    //testando parteH
-    val aluno3 = Aluno("Aurea", "Tolentino", 3)
-    val aluno4 = Aluno("Angelo", "Luisi", 4)
-    val aluno5 = Aluno("Antonio", "Abidal", 5)
+    println("\n---Bem vindo à <Digital House> School---\n")
 
-    curso1.adicionarUmAluno(aluno3)
-    curso1.adicionarUmAluno(aluno4)
-    curso1.excluirAluno(aluno1)
-    curso1.adicionarUmAluno(aluno4)
-    curso1.excluirAluno(aluno5)
-    curso1.excluirAluno(aluno1)
+    println("---Cadastro de Professores Titulares---")
+    digitalManager.registrarProfessorTitular("Aline", "Cruz", 1, "Android")
+    digitalManager.registrarProfessorTitular("Alessandra", "Luisi", 2, "Web")
 
-    println("\n---Agora com digitalManager---")
-    println()
+    println("\n---Cadastro de Professores Adjuntos---")
+    digitalManager.registrarProfessorAdjunto("Jorge", "Roberto", 3, 20)
+    digitalManager.registrarProfessorAdjunto("Welisson", "Dias", 4, 10)
 
-    digitalManager.listaDeAlunos.put(1, aluno1)
-    digitalManager.listaDeAlunos.put(2, aluno2)
+    println("\n---Cadastro de Cursos---")
+    digitalManager.registrarCurso("Full Stack", 20001,3)
+    digitalManager.registrarCurso("Android", 20002, 2)
 
-    digitalManager.listaDeCursos.add(curso1)
-    digitalManager.matricularAluno(1,1)
+    println("\n---Alocando os Professores nos cursos---")
+    digitalManager.alocarProfessores(20001, 2, 4)
+    digitalManager.alocarProfessores(20002,1,3)
 
-    digitalManager.listaDeProfessores.put(professor1.codigoProfessor, professor1)
-    digitalManager.listaDeProfessores.put(professor2.codigoProfessor, professor2)
+    println("\n---Matricula de Alunos na Instituição---")
+    digitalManager.matricularAluno("Angelo", "Luisi", 1)
+    digitalManager.matricularAluno("Ronald", "Cavalho", 2)
+    digitalManager.matricularAluno("Pig", "Luisi", 3)
+    digitalManager.matricularAluno("Yoda", "Cruz", 4)
+    digitalManager.matricularAluno("Darth", "Vader", 5)
 
-    digitalManager.alocarProfessores(1,1,2)
+    println("\n---Matriculando Alunos nos Cursos---")
+    digitalManager.matricularAluno(1,20001)
+    digitalManager.matricularAluno(2,20001)
+    digitalManager.matricularAluno(3,20002)
+    digitalManager.matricularAluno(4, 20002)
+    digitalManager.matricularAluno(5,20002)
 }

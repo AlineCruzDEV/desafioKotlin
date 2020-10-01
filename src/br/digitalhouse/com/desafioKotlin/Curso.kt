@@ -11,9 +11,7 @@ class Curso(
     var listaAlunos = mutableListOf<Aluno>()
 
     init {
-        println("\nCurso $nome - Codigo $codigoCurso criado com sucesso. \nMembros: Professor Titular ${professorTitular?.nome}, Professor Adjunto ${professorAdjunto?.nome}, Máximo de $qtdadeMaximaAlunos alunos")
-        println("Lista de Alunos Matriculados: ")
-        listaAlunos.forEach { print("\t" + it.nome + ",") }
+        println("<Digital House> Curso $nome - Codigo $codigoCurso criado com sucesso.")
     }
 
     //verifica se dois cursos são iguais tendo base apenas seus códigos
@@ -44,10 +42,10 @@ class Curso(
         when {
             listaAlunos.contains(umAluno) -> {
                 listaAlunos.remove(umAluno)
-                println("Aluno ${umAluno.nome} removido com sucesso do curso $nome. Lista atual:")
+                println("<Digital House> Aluno ${umAluno.nome} removido com sucesso do curso $nome. Lista atual:")
                 listaAlunos.forEach { println(it.nome) }
             }
-            else -> println("Aluno ${umAluno.nome} não pertence a esse curso")
+            else -> println("<Digital House> Aluno ${umAluno.nome} não pertence a esse curso")
         }
     }
 }
