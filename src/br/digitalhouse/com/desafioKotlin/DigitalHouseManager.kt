@@ -3,6 +3,7 @@ package br.digitalhouse.com.desafioKotlin
 import java.util.*
 
 class DigitalHouseManager {
+
     var listaDeAlunos = mutableMapOf<Int, Aluno>()
     var listaDeProfessores = mutableMapOf<Int, Professor>()
     var listaDeCursos = mutableListOf<Curso>()
@@ -17,7 +18,7 @@ class DigitalHouseManager {
             when {
                 it.codigoCurso == codigoCurso -> {
                     listaDeCursos.remove(it)
-                    println("[Digital Manager] Curso excluído com sucesso")
+                    println("<Digital House> Curso excluído com sucesso")
                 }
             }
         }
@@ -34,9 +35,9 @@ class DigitalHouseManager {
         when {
             listaDeProfessores.containsKey(codigoProfessor) -> {
                 listaDeProfessores.remove(codigoProfessor)
-                println("[Digital Manager] Professor excluido com sucesso")
+                println("<Digital House> Professor excluido com sucesso!")
             }
-            else -> println("[Digital Manager] Professor não existe")
+            else -> println("<Digital House> Professor não existe!")
         }
     }
 
@@ -46,7 +47,6 @@ class DigitalHouseManager {
     //matricular um aluno em um curso
     fun matricularAluno(codigoAluno: Int, codigoCurso: Int) {
         var alunoAux: Aluno
-        var cursoAux: Curso
 
         listaDeCursos.forEach {
             when {
@@ -60,7 +60,7 @@ class DigitalHouseManager {
                             var data = Date()
                             listaDeMatriculas.add(Matricula(alunoAux, it, data))
                         }
-                        else -> println("[Digital Manager] Não há vagas disponíveis")
+                        else -> println("<Digital House> Não há vagas disponíveis no curso ${it.nome}. O aluno ${alunoAux.nome} poderá se matricular em outros cursos.")
                     }
                 }
             }
@@ -78,7 +78,7 @@ class DigitalHouseManager {
                     it.professorTitular = titular as ProfessorTitular
                     it.professorAdjunto = adjunto as ProfessorAdjunto
 
-                    println("[Digital Manager] Alocados professores ${it.professorTitular!!.nome} (Titular) e ${it.professorAdjunto!!.nome} (Adjunto) ao curso ${it.nome}")
+                    println("<Digital House> Alocados professores ${it.professorTitular!!.nome} (Titular) e ${it.professorAdjunto!!.nome} (Adjunto) ao curso ${it.nome}")
                 }
             }
         }

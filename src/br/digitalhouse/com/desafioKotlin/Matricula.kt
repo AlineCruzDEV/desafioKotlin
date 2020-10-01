@@ -7,7 +7,8 @@ class Matricula(
         var curso: Curso,
         val data: Date
 ) {
+
     init {
-        println("Aluno ${aluno.nome} matriculado no curso ${curso.nome} na data $data")
+        println("<Digital House> Aluno ${aluno.nome} matriculado no curso [${curso.nome}] na data $data")
     }
 }

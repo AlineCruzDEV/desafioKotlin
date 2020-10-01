@@ -7,7 +7,7 @@ class Aluno(
 ) {
 
     init {
-        println("Aluno(a) $nome $sobrenome - Codigo $codigoAluno criado(a) no sistema.")
+        println("<Digital House> Aluno(a) $nome $sobrenome - Codigo $codigoAluno criado(a) no sistema.")
     }
 
     //verifica se dois alunos são iguais tendo base apenas seus códigos

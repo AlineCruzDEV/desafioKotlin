@@ -6,8 +6,9 @@ abstract class Professor(
         var tempoDeCasa: Int,
         var codigoProfessor: Int
 ) {
+
     init {
-        println("Professor $nome $sobrenome - Codigo $codigoProfessor cadastrado com sucesso.")
+        println("<Digital House> Professor $nome $sobrenome - Codigo $codigoProfessor cadastrado com sucesso.")
     }
 
     //verifica se dois professores são iguais tendo base apenas seus códigos
