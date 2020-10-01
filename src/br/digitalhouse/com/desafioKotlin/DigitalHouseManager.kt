@@ -1,24 +1,86 @@
 package br.digitalhouse.com.desafioKotlin
 
-class DigitalHouseManager(
-        var listaDeAlunos: MutableList<Aluno>,
-        var listaDeProfessores: MutableList<Professor>,
-        var listaDeCursos: MutableList<Curso>,
-        var listaDeMatriculas: MutableList<Matricula>
-) {
-    init {
-        println("Digital Manager inicializada.")
-        println("Alunos:")
-        listaDeAlunos.forEach { println(it.nome) }
-        println()
-        println("Professores:")
-        listaDeProfessores.forEach { println(it.nome) }
-        println()
-        println("Cursos:")
-        listaDeCursos.forEach { println(it.nome) }
-        println()
-        println("Data Matriculas:")
-        listaDeMatriculas.forEach { println(it.data) }
-        println()
+import java.util.*
+
+class DigitalHouseManager {
+    var listaDeAlunos = mutableMapOf<Int, Aluno>()
+    var listaDeProfessores = mutableMapOf<Int, Professor>()
+    var listaDeCursos = mutableListOf<Curso>()
+    var listaDeMatriculas = mutableListOf<Matricula>()
+
+    //registra um curso e coloca na listaDeCursos
+    fun registrarCurso(nome: String, codigoCurso: Int, quantidadeMaximaDeAlunos: Int) = listaDeCursos.add(Curso(nome, codigoCurso, quantidadeMaximaDeAlunos))
+
+    //exclui um curso pelo seu código
+    fun excluirCurso(codigoCurso: Int) {
+        listaDeCursos.forEach {
+            when {
+                it.codigoCurso == codigoCurso -> {
+                    listaDeCursos.remove(it)
+                    println("[Digital Manager] Curso excluído com sucesso")
+                }
+            }
+        }
+    }
+
+    //registrar professor adjunto
+    fun registrarProfessorAdjunto(nome: String, sobrenome: String, codigoProfessor: Int, quantidadeDeHoras: Int) = listaDeProfessores.put(codigoProfessor, ProfessorAdjunto(nome, sobrenome, 0, codigoProfessor, quantidadeDeHoras))
+
+    //registrar professor titular
+    fun registrarProfessorTitular(nome: String, sobrenome: String, codigoProfessor: Int, especialidade: String) = listaDeProfessores.put(codigoProfessor, ProfessorTitular(nome, sobrenome, 0, codigoProfessor, especialidade))
+
+    //excluir professor
+    fun excluirProfessor(codigoProfessor: Int) {
+        when {
+            listaDeProfessores.containsKey(codigoProfessor) -> {
+                listaDeProfessores.remove(codigoProfessor)
+                println("[Digital Manager] Professor excluido com sucesso")
+            }
+            else -> println("[Digital Manager] Professor não existe")
+        }
+    }
+
+    //registrar um aluno
+    fun matricularAluno(nome: String, sobrenome: String, codigoAluno: Int) = listaDeAlunos.put(codigoAluno, Aluno(nome, sobrenome, codigoAluno))
+
+    //matricular um aluno em um curso
+    fun matricularAluno(codigoAluno: Int, codigoCurso: Int) {
+        var alunoAux: Aluno
+        var cursoAux: Curso
+
+        listaDeCursos.forEach {
+            when {
+                (it.codigoCurso == codigoCurso && listaDeAlunos.containsKey(codigoAluno)) -> {
+                    alunoAux = listaDeAlunos.getValue(codigoAluno)
+
+                    var validaMatricula = it.adicionarUmAluno(alunoAux)
+
+                    when {
+                        validaMatricula == true -> {
+                            var data = Date()
+                            listaDeMatriculas.add(Matricula(alunoAux, it, data))
+                        }
+                        else -> println("[Digital Manager] Não há vagas disponíveis")
+                    }
+                }
+            }
+        }
+    }
+
+    //alocar professores titular e adjunto em um determinado curso
+    fun alocarProfessores(codigoCurso: Int, codigoProfessorTitular: Int, codigoProfessorAdjunto: Int) {
+        listaDeCursos.forEach {
+            when {
+                it.codigoCurso == codigoCurso -> {
+                    var titular= listaDeProfessores.getValue(codigoProfessorTitular)
+                    var adjunto = listaDeProfessores.getValue(codigoProfessorAdjunto)
+
+                    it.professorTitular = titular as ProfessorTitular
+                    it.professorAdjunto = adjunto as ProfessorAdjunto
+
+                    println("[Digital Manager] Alocados professores ${it.professorTitular!!.nome} (Titular) e ${it.professorAdjunto!!.nome} (Adjunto) ao curso ${it.nome}")
+                }
+            }
+        }
     }
 }

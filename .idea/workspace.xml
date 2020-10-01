@@ -21,9 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="dfcaeae2-fd3e-4207-8f82-31abd7f09fb4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/desafioKotlin/br/digitalhouse/com/desafioKotlin/Curso.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/desafioKotlin/br/digitalhouse/com/desafioKotlin/Curso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/desafioKotlin/br/digitalhouse/com/desafioKotlin/DigitalHouseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/desafioKotlin/br/digitalhouse/com/desafioKotlin/DigitalHouseManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/desafioKotlin/br/digitalhouse/com/desafioKotlin/PrincipalKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/desafioKotlin/br/digitalhouse/com/desafioKotlin/PrincipalKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/desafioKotlin/br/digitalhouse/com/desafioKotlin/desafioKotlin.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/desafioKotlin/br/digitalhouse/com/desafioKotlin/desafioKotlin.drawio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Curso.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Curso.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/DigitalHouseManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/DigitalHouseManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Principal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/digitalhouse/com/desafioKotlin/Principal.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,21 +109,29 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1316" height="166" key="GridCell.Tab.0.bottom" timestamp="1601262874651">
+    <state width="1292" height="178" key="GridCell.Tab.0.bottom" timestamp="1601575147549">
       <screen x="1600" y="132" width="1366" height="768" />
     </state>
-    <state width="1316" height="166" key="GridCell.Tab.0.bottom/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601262874651" />
-    <state width="1316" height="166" key="GridCell.Tab.0.center" timestamp="1601262874650">
+    <state width="1292" height="178" key="GridCell.Tab.0.bottom/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601575147549" />
+    <state width="1292" height="178" key="GridCell.Tab.0.center" timestamp="1601575147549">
       <screen x="1600" y="132" width="1366" height="768" />
     </state>
-    <state width="1316" height="166" key="GridCell.Tab.0.center/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601262874650" />
-    <state width="1316" height="166" key="GridCell.Tab.0.left" timestamp="1601262874650">
+    <state width="1292" height="178" key="GridCell.Tab.0.center/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601575147549" />
+    <state width="1292" height="178" key="GridCell.Tab.0.left" timestamp="1601575147549">
       <screen x="1600" y="132" width="1366" height="768" />
     </state>
-    <state width="1316" height="166" key="GridCell.Tab.0.left/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601262874650" />
-    <state width="1316" height="166" key="GridCell.Tab.0.right" timestamp="1601262874651">
+    <state width="1292" height="178" key="GridCell.Tab.0.left/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601575147549" />
+    <state width="1292" height="178" key="GridCell.Tab.0.right" timestamp="1601575147549">
       <screen x="1600" y="132" width="1366" height="768" />
     </state>
-    <state width="1316" height="166" key="GridCell.Tab.0.right/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601262874651" />
+    <state width="1292" height="178" key="GridCell.Tab.0.right/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601575147549" />
+    <state x="2043" y="195" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog" timestamp="1601425186096">
+      <screen x="1600" y="132" width="1366" height="768" />
+    </state>
+    <state x="2043" y="195" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601425186096" />
+    <state x="1942" y="221" width="672" height="678" key="search.everywhere.popup" timestamp="1601430424201">
+      <screen x="1600" y="132" width="1366" height="768" />
+    </state>
+    <state x="1942" y="221" width="672" height="678" key="search.everywhere.popup/1600.132.1366.768/0.0.1600.857@1600.132.1366.768" timestamp="1601430424201" />
   </component>
 </project>
