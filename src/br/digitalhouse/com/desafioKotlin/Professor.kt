@@ -8,7 +8,7 @@ abstract class Professor(
 ) {
 
     init {
-        println("<Digital House> Professor $nome $sobrenome - Codigo $codigoProfessor cadastrado com sucesso.")
+        println("<Digital House> Professor(a) $nome $sobrenome - Codigo $codigoProfessor cadastrado com sucesso.")
     }
 
     //verifica se dois professores são iguais tendo base apenas seus códigos
